@@ -31,10 +31,10 @@ How it works:
 * It will ask you to connect to a wifi network "printer", click "join".
 * Your phone automatically gets an ip address in the isolated wifi subnet(no internet) thanks to dhcp.
 * Choose a document you want to print. Click "share" -> "print'. Phone will automatically detect a printer. Press a print confirmation button.
-* Done.
-
-
+* Done.  
 
 Issues:
 * Use default `cupsd.conf` is custom one fails.
 * If you phone can not find a printer you could try `sudo ip netns exec printer cupsctl --share-printers --remote-any`.
+* Make sure cups generated all necessary ssl certificates.
+* Fix a file system permissions if needed.
