@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone='no'?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+
+<service-group>
+
+  <name replace-wildcards="yes">
+    wifi-printer
+  </name>
+
+
+  <!-- IPP printer -->
+  <service>
+    <type>_ipp._tcp</type>
+    <port>631</port>
+
+    <txt-record>txtvers=1</txt-record>
+    <txt-record>qtotal=1</txt-record>
+
+    <!-- Printer capabilities -->
+    <txt-record>URF=none</txt-record>
+    <txt-record>rp=printers/hp-LaserJet-1010</txt-record>
+
+    <txt-record>product=(Printer Appliance)</txt-record>
+
+    <txt-record>ty=Printer Appliance</txt-record>
+
+    <txt-record>adminurl=http://printer.local:631</txt-record>
+
+  </service>
+
+
+  <!-- AirPrint compatibility -->
+  <service>
+    <type>_ipp._tcp</type>
+    <subtype>_universal._sub._ipp._tcp</subtype>
+    <port>631</port>
+
+    <txt-record>txtvers=1</txt-record>
+    <txt-record>qtotal=1</txt-record>
+
+    <txt-record>URF=none</txt-record>
+    <txt-record>rp=printers/hp-LaserJet-1010</txt-record>
+
+    <txt-record>product=(Printer Appliance)</txt-record>
+    <txt-record>ty=Printer Appliance</txt-record>
+
+  </service>
+
+</service-group>
