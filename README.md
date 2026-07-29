@@ -1,6 +1,8 @@
 # old-printer-into-wifi-direct-printer
 Upgrade your old printer into "Wi-Fi Direct" printer. 
 
+<img width="1376" height="768" alt="printer" src="https://github.com/user-attachments/assets/a761734f-e0d3-4089-a5f7-341263057173" />
+
 You need:
 * `Old printer`
 * `Linux computer`*
