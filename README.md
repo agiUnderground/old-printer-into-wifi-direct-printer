@@ -29,7 +29,7 @@ Make sure you wifi interface is NOT managed by a network manager(if you use netw
 11. Generate a QR code `./gen-qr.sh` (which includes wifi AP ssid and credentials), print it(qr.png) and stick it on a printer.
 
 How it works:
-* You scan a QR code with you phone.
+* You scan a QR code with your phone.
 * It will ask you to connect to a wifi network "printer", click "join".
 * Your phone automatically gets an ip address in the isolated wifi subnet(no internet) thanks to dhcp.
 * Choose a document you want to print. Click "share" -> "print'. Phone will automatically detect a printer. Press a print confirmation button.
