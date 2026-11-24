@@ -5,10 +5,23 @@ set -euo pipefail
 ################################################################################
 # Configuration
 ################################################################################
+# Set this to the MAC address of the wireless card you want to operate on
+TARGET_MAC="ff:ff:ff:ff:ff:ff"
+
+# Find the network interface name by MAC address
+IFACE=$(ip -o link show | awk -v mac="$TARGET_MAC" '$0 ~ mac {print $2}' | cut -d: -f1)
+
+if [ -z "$IFACE" ]; then
+    echo "Interface with MAC $TARGET_MAC not found"
+    exit 1
+fi
+
+# Find the corresponding phy name by interface name
+# /sys/class/net/<iface>/phy80211/name contains the phy name
+PHY=$(cat /sys/class/net/"$IFACE"/phy80211/name 2>/dev/null)
 
 NETNS="printer"
 
-PHY="phy0"
 WIFI_IF="printer0"
 
 IP="192.168.50.1"
